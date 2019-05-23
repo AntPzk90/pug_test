@@ -16,15 +16,18 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 //Sass препроцессор
 const sass = require('gulp-sass');
-//Less препроцессор
-const less = require('gulp-less');
-//Stylus препроцессор
-const stylus = require('gulp-stylus');
+// обработчик ошибок
+var plumber = require("gulp-plumber");
+
+var pug = require("gulp-pug");
+// //Less препроцессор
+// const less = require('gulp-less');
+// //Stylus препроцессор
+// const stylus = require('gulp-stylus');
 
 //Порядок подключения файлов со стилями
 const styleFiles = [
-   './src/css/main.styl',
-   './src/css/media.styl'
+   './src/sass/main.scss'
 ]
 //Порядок подключения js файлов
 const scriptFiles = [
@@ -38,8 +41,10 @@ gulp.task('styles', () => {
    //Всей файлы по шаблону './src/css/**/*.css'
    return gulp.src(styleFiles)
       .pipe(sourcemaps.init())
+      // обработчик ошибок
+      .pipe(plumber())
       //Указать stylus() , sass() или less()
-      .pipe(stylus())
+      .pipe(sass())
       //Объединение файлов в один
       .pipe(concat('style.css'))
       //Добавить префиксы
@@ -47,6 +52,8 @@ gulp.task('styles', () => {
          browsers: ['last 2 versions'],
          cascade: false
       }))
+      // генерацю не миниф стилей в папку source
+      .pipe(gulp.dest('./src/css'))
       //Минификация CSS
       .pipe(cleanCSS({
          level: 2
@@ -77,21 +84,28 @@ gulp.task('scripts', () => {
 gulp.task('del', () => {
    return del(['build/*'])
 });
-
+gulp.task('pug', function buildHTML() {
+   return gulp.src('./src/pug/pages/*.pug')
+   .pipe(pug({
+     pretty:true
+   }))
+   .pipe(gulp.dest('./build'))
+ });
 //Таск для отслеживания изменений в файлах
 gulp.task('watch', () => {
    browserSync.init({
       server: {
-         baseDir: "./"
+         baseDir: "./build"
       }
    });
    //Следить за файлами со стилями с нужным расширением
-   gulp.watch('./src/css/**/*.styl', gulp.series('styles'))
+   gulp.watch('./src/sass/**/*.scss', gulp.series('styles'))
    //Следить за JS файлами
    gulp.watch('./src/js/**/*.js', gulp.series('scripts'))
    //При изменении HTML запустить синхронизацию
-   gulp.watch("./*.html").on('change', browserSync.reload);
+   gulp.watch('./src/pug/**/*.pug', gulp.series('pug'))
+   gulp.watch("./build/*.html").on('change', browserSync.reload);
 });
 
 //Таск по умолчанию, Запускает del, styles, scripts и watch
-gulp.task('default', gulp.series('del', gulp.parallel('styles', 'scripts'), 'watch'));
+gulp.task('start', gulp.series('del', gulp.parallel('styles', 'scripts','pug'), 'watch'));
