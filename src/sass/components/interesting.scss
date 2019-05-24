@@ -1,0 +1,42 @@
+.interesting{
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+.interesting__title{
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.interesting__text{
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+.interesting__btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: $white;
+    width: 100%;
+    max-width: 280px;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 26px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    background-color:$blue;
+    &:hover{
+        background-color: $btn_hover;
+    }
+    &:active{
+        background-color: $btn_active;
+        color: rgba($color: #fff, $alpha: .5);
+    }
+    @media screen and (min-width: $tablet){
+        max-width: 460px;
+    }
+}

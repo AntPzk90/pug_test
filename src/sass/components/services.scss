@@ -1,0 +1,59 @@
+.services__list{
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    @media screen and (min-width: $tablet){
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.services__list-item{
+    box-sizing: border-box;
+    padding-left: 50px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    .serv__title{
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: bold
+    }
+    .serv__dscr{
+        font-size: 14px;
+        line-height: 21px;
+    }
+    &:before{
+        content: "";
+        display:block;
+        width: 38px;
+        height: 38px;
+        background-image: url('../imgs/desktop/icon-house.png');
+        background-position: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        @media screen and (min-width: $tablet){
+            width: 74px;
+            height: 78px;
+            top: 62px;
+            left: 50%;
+            margin-left: -37px;
+        }
+    }
+    &:nth-child(2):before{
+        background-image: url('../imgs/desktop/icon-gift.png');
+    }
+    &:nth-child(3):before{
+        background-image: url('../imgs/desktop/icon-burger.png');
+    }
+    @media screen and (min-width: $tablet){
+        width: 33.3%;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 150px;
+        text-align: center;
+        min-height: 330px;
+    }
+}

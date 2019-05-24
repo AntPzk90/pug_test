@@ -1,0 +1,35 @@
+.sedona__slogan{
+    text-align: center;
+    min-height: 220px;
+    box-sizing: border-box;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    @media screen and (min-width: $tablet){
+        min-height: 200px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+}
+.slogan__big-txt{
+    line-height: 26px;
+    font-weight: bold;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $tablet){
+        width: 440px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+.slogan__small-txt{
+    display: block;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+}

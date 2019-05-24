@@ -1,0 +1,39 @@
+.text__section{
+    min-height: 390px;
+    background-color: $blue;
+    box-sizing: border-box;
+    padding-top: 90px;
+    text-align: center;
+    background-image: url('../imgs/mobile/back-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    picture img{
+        height: 216px;
+        @media screen and (min-width: $tablet){
+            height: 352px;
+        }
+    }
+    &:after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 57px;
+        background-image: url('../imgs/mobile/intro-triangle.svg.png');
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        @media screen and (min-width: $tablet){
+            background-image: url('../imgs/desktop/intro-triangle.svg.png');
+        }
+    }
+    @media screen and (min-width: $tablet){
+        min-height: 520px;
+        background-image: url('../imgs/desktop/back-desktop.jpg');
+        padding-top: 78px;
+    }
+}

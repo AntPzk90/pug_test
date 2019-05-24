@@ -18,8 +18,10 @@ const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 // обработчик ошибок
 var plumber = require("gulp-plumber");
-
+// препроцессор html
 var pug = require("gulp-pug");
+//минифик изобр
+var imagemin = require("gulp-imagemin");
 // //Less препроцессор
 // const less = require('gulp-less');
 // //Stylus препроцессор
@@ -84,6 +86,7 @@ gulp.task('scripts', () => {
 gulp.task('del', () => {
    return del(['build/*'])
 });
+//Такс для pug
 gulp.task('pug', function buildHTML() {
    return gulp.src('./src/pug/pages/*.pug')
    .pipe(pug({
@@ -91,6 +94,14 @@ gulp.task('pug', function buildHTML() {
    }))
    .pipe(gulp.dest('./build'))
  });
+//Таск для imagemin
+gulp.task('image-compress',function(){
+   return gulp.src('./src/imgs/**')
+   .pipe(imagemin({
+      progressive: true
+   }))
+   .pipe(gulp.dest('./build/imgs'))
+})
 //Таск для отслеживания изменений в файлах
 gulp.task('watch', () => {
    browserSync.init({
@@ -98,6 +109,8 @@ gulp.task('watch', () => {
          baseDir: "./build"
       }
    });
+   //Следить за картинками
+   gulp.watch('./src/imgs/**', gulp.series('image-compress'))
    //Следить за файлами со стилями с нужным расширением
    gulp.watch('./src/sass/**/*.scss', gulp.series('styles'))
    //Следить за JS файлами
@@ -108,4 +121,4 @@ gulp.task('watch', () => {
 });
 
 //Таск по умолчанию, Запускает del, styles, scripts и watch
-gulp.task('start', gulp.series('del', gulp.parallel('styles', 'scripts','pug'), 'watch'));
+gulp.task('start', gulp.series('del', gulp.parallel('styles', 'scripts','image-compress','pug'), 'watch'));

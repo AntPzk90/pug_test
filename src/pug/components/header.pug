@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-html(lang="en")
+include .././variables/vars.pug
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -7,13 +8,18 @@ html(lang="en")
         link(rel="stylesheet", href="css/style.css")
         title Document
     body
-        header.main_header
-            nav.main_nav
-                ul.list
-                    li
-                    li
-                    li
-                    li
-                    li
-                    li
-        div(style= "background:blue;height:100px;")
+        header.main__header
+            button.mobi__menu-btn(type="button")
+                span.decor__span
+            button.mobi__menu-close(type="button")   
+            div.main__header-wrapper.container
+                a.header__logo(href="#")
+                    img.desktop__logo(src="imgs/desktop/logotype-desktop.png")
+                    img.desktop__logo-mobile(src="imgs/mobile/logotype-mobile.png")
+                nav.main__nav
+                    mixin list(...items)
+                        ul.nav__list
+                            each item in items
+                                li.nav__list-item
+                                    a(href="#").nav__list-link=item
+                    +list("главная","фото и видео","форма отзыва","html academy")

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,18 +8,78 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="main_header">
-      <nav class="main_nav">
-        <ul class="list">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
+    <header class="main__header">
+      <button class="mobi__menu-btn" type="button"><span class="decor__span"></span></button>
+      <button class="mobi__menu-close" type="button">  </button>
+      <div class="main__header-wrapper container"><a class="header__logo" href="#"><img class="desktop__logo" src="imgs/desktop/logotype-desktop.png"/><img class="desktop__logo-mobile" src="imgs/mobile/logotype-mobile.png"/></a>
+        <nav class="main__nav">
+                    <ul class="nav__list">
+                      <li class="nav__list-item"><a class="nav__list-link" href="#">главная</a></li>
+                      <li class="nav__list-item"><a class="nav__list-link" href="#">фото и видео</a></li>
+                      <li class="nav__list-item"><a class="nav__list-link" href="#">форма отзыва</a></li>
+                      <li class="nav__list-item"><a class="nav__list-link" href="#">html academy</a></li>
+                    </ul>
+        </nav>
+      </div>
     </header>
-    <div style="background:blue;height:100px;"></div>
   </body>
 </html>
+<main>
+  <section class="text__section container">
+    <picture class="picture__text"><img src="imgs/desktop/text-index.png"/></picture>
+  </section>
+  <section class="sedona__slogan container">
+    <p class="slogan__big-txt">СЕДОНА — небольшой городок в АРИЗОНЕ,зАСЛУЖИвающий большего!</p><span class="slogan__small-txt">рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</span>
+  </section>
+  <section class="advantages_1 container">
+    <div class="advantage__img">
+      <div class="advantage__dscr"><span class="advantage__dscr-title">НАСТОЯЩИЙ ГОРОДОК</span><span class="advantage__dscr-number">— №1 —</span><span class="advantage__dscr-txt">СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</span></div>
+      <picture class="picture__dscr"><img src="imgs/desktop/photo-city.jpg"/></picture>
+    </div>
+  </section>
+  <section class="services container">
+    <ul class="services__list">
+      <li class="services__list-item">
+        <p class="serv__title">жильё</p>
+        <p class="serv__dscr">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+      </li>
+      <li class="services__list-item">
+        <p class="serv__title">еда</p>
+        <p class="serv__dscr">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+      </li>
+      <li class="services__list-item">
+        <p class="serv__title">сувениры</p>
+        <p class="serv__dscr">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+      </li>
+    </ul>
+  </section>
+  <section class="advantages_2 container">
+    <div class="advantage__img">
+      <div class="advantage__dscr"><span class="advantage__dscr-title">ТАМ ЕСТЬ МОСТ ДЬЯВОЛА</span><span class="advantage__dscr-number">— №2 —</span><span class="advantage__dscr-txt">Да, по нему можно пройти! Если вы осмелитесь, конечно</span></div>
+      <picture class="picture__dscr"><img src="imgs/desktop/photo-bridge.jpg"/></picture>
+    </div>
+  </section>
+  <section class="more__advantages container">
+    <ul class="more-advantages__list">
+      <li class="more-advantages__list-item"><span class="more-advantage__dscr-title">НЕБОЛЬШАЯ ПЛОЩАДЬ</span><span class="more-advantage__dscr-number">— №3 —</span><span class="more-advantage__dscr-txt">ВСЕ интересные места находятся очень близко</span></li>
+      <li class="more-advantages__list-item"><span class="more-advantage__dscr-title">КРАСИВАЯ ДОРОГА</span><span class="more-advantage__dscr-number">— №4 —</span><span class="more-advantage__dscr-txt">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</span></li>
+      <li class="more-advantages__list-item"><span class="more-advantage__dscr-title">МАЛО ТУРИСТОВ</span><span class="more-advantage__dscr-number">— №5 —</span><span class="more-advantage__dscr-txt">Большинство едет в гранд каньон и толпится там</span></li>
+    </ul>
+  </section>
+  <section class="interesting container">
+    <p class="interesting__title">Заинтерисовались?</p>
+    <p class="interesting__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p><a class="interesting__btn btn" href="#">Найти гостиницу</a>
+  </section>
+  <section class="map container">
+    <iframe class="map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13095.28490287316!2d-111.8071124479258!3d34.860719115788946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1558679597812!5m2!1sru!2sua" style="border:0" allowfullscreen="allowfullscreen"></iframe>
+  </section>
+</main>
+<section class="footer container">
+  <p class="hashtag">#VISITSEDONA</p>
+  <ul class="footer__social-list">
+    <li class="footer__social-list-item"><a href="#"><img src="imgs/desktop/icon-twitter.png" alt="social-icon"/></a></li>
+    <li class="footer__social-list-item"><a href="#"><img src="imgs/desktop/icon-facebook.png" alt="social-icon"/></a></li>
+    <li class="footer__social-list-item"><a href="#"><img src="imgs/desktop/icon-youtube.png" alt="social-icon"/></a></li>
+  </ul>
+  <p class="academy__logo"><span>разработано<a href="#"><img src="imgs/desktop/htmlacademy.png"/></a></span></p>
+</section>
