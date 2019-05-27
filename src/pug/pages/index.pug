@@ -1,45 +1,49 @@
-include .././components/header.pug
-main
-    section.text__section.container
-        picture.picture__text
-            img(src="imgs/desktop/text-index.png")
-    section.sedona__slogan.container
-        p.slogan__big-txt= "СЕДОНА — небольшой городок в АРИЗОНЕ,зАСЛУЖИвающий большего!"
-        span.slogan__small-txt= "рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!"
-    section.advantages_1.container
-        div.advantage__img
-            div.advantage__dscr
-                span.advantage__dscr-title= "НАСТОЯЩИЙ ГОРОДОК"
-                span.advantage__dscr-number= "— №1 —"
-                span.advantage__dscr-txt= "СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ"
-            picture.picture__dscr
-                img(src="imgs/desktop/photo-city.jpg")
-    section.services.container
-        ul.services__list
-            for item in servListInfo
-                li.services__list-item
-                    p.serv__title=item.title
-                    p.serv__dscr=item.text
-    section.advantages_2.container
-        div.advantage__img
-            div.advantage__dscr
-                span.advantage__dscr-title= "ТАМ ЕСТЬ МОСТ ДЬЯВОЛА"
-                span.advantage__dscr-number= "— №2 —"
-                span.advantage__dscr-txt= "Да, по нему можно пройти! Если вы осмелитесь, конечно"
-            picture.picture__dscr
-                img(src="imgs/desktop/photo-bridge.jpg")
-    section.more__advantages.container
-            ul.more-advantages__list
-                for item in moreAdvantagesListInfo
-                    li.more-advantages__list-item
-                        span.more-advantage__dscr-title= item.title
-                        span.more-advantage__dscr-number= item.number
-                        span.more-advantage__dscr-txt= item.text
-    section.interesting.container
-        p.interesting__title= "Заинтерисовались?"
-        p.interesting__text= "Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне"
-        a(href="#").interesting__btn.btn= "Найти гостиницу"
-    section.map.container
-        iframe.map__iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13095.28490287316!2d-111.8071124479258!3d34.860719115788946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1558679597812!5m2!1sru!2sua"
-        style="border:0" allowfullscreen)
-include .././components/footer.pug
+extends .././layouts/layout.pug
+block title
+    title="Sedona-main"
+block content
+    main
+        h1.vis-hid
+            | скрытый заголовок
+        section.text__section.container
+            picture.picture__text
+                img(src="imgs/desktop/text-index.png")
+        section.sedona__slogan.container
+            p.slogan__big-txt= "СЕДОНА — небольшой городок в АРИЗОНЕ,зАСЛУЖИвающий большего!"
+            span.slogan__small-txt= "рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!"
+        section.advantages_1.container
+            div.advantage__img
+                div.advantage__dscr
+                    span.advantage__dscr-title= "НАСТОЯЩИЙ ГОРОДОК"
+                    span.advantage__dscr-number= "— №1 —"
+                    span.advantage__dscr-txt= "СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ"
+                picture.picture__dscr
+                    img(src="imgs/desktop/photo-city.jpg")
+        section.services.container
+            ul.services__list
+                for item in servListInfo
+                    li.services__list-item
+                        p.serv__title=item.title
+                        p.serv__dscr=item.text
+        section.advantages_2.container
+            div.advantage__img
+                div.advantage__dscr
+                    span.advantage__dscr-title= "ТАМ ЕСТЬ МОСТ ДЬЯВОЛА"
+                    span.advantage__dscr-number= "— №2 —"
+                    span.advantage__dscr-txt= "Да, по нему можно пройти! Если вы осмелитесь, конечно"
+                picture.picture__dscr
+                    img(src="imgs/desktop/photo-bridge.jpg")
+        section.more__advantages.container
+                ul.more-advantages__list
+                    for item in moreAdvantagesListInfo
+                        li.more-advantages__list-item
+                            span.more-advantage__dscr-title= item.title
+                            span.more-advantage__dscr-number= item.number
+                            span.more-advantage__dscr-txt= item.text
+        section.interesting.container
+            p.interesting__title= "Заинтерисовались?"
+            p.interesting__text= "Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне"
+            a(href="#").interesting__btn.btn= "Найти гостиницу"
+        section.map.container
+            iframe.map__iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13095.28490287316!2d-111.8071124479258!3d34.860719115788946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1558679597812!5m2!1sru!2sua"
+            style="border:0" allowfullscreen)

@@ -22,6 +22,11 @@ var plumber = require("gulp-plumber");
 var pug = require("gulp-pug");
 //минифик изобр
 var imagemin = require("gulp-imagemin");
+//svg спрайт
+var svgSprite = require('gulp-svg-sprite');
+var cheerio = require('gulp-cheerio');
+var svgmin = require('gulp-svgmin');
+var replace = require('gulp-replace');
 // //Less препроцессор
 // const less = require('gulp-less');
 // //Stylus препроцессор
@@ -102,6 +107,40 @@ gulp.task('image-compress',function(){
    }))
    .pipe(gulp.dest('./build/imgs'))
 })
+// таск для спрайтов svg
+gulp.task('svg-sprite',function(){
+   return gulp.src('./src/imgs/svg/*.svg')
+   // минификатор svg
+   .pipe(svgmin({
+         js2svg: {
+            pretty: true
+         }
+      }
+   ))
+   // удаляем атрибуты
+   .pipe(cheerio({
+         run: function ($){
+            $('[stroke]').removeAttr('stroke');
+            $('[style]').removeAttr('style');
+         },
+         parserOptions: {
+            xmlMode:true
+          }
+   }))
+   //правим символы после удаления
+   .pipe(replace('&gt', '>'))
+   // собираем спрайт
+   .pipe(svgSprite({
+         mode: {
+            stack: {
+               sprite: "../sprite.svg"  //sprite file name
+            }
+         },
+   }
+   ))
+   .pipe(gulp.dest('./build/imgs'));
+})
+
 //Таск для отслеживания изменений в файлах
 gulp.task('watch', () => {
    browserSync.init({
@@ -110,6 +149,7 @@ gulp.task('watch', () => {
       }
    });
    //Следить за картинками
+   gulp.watch('./src/imgs/svg/*.svg', gulp.series('svg-sprite'))
    gulp.watch('./src/imgs/**', gulp.series('image-compress'))
    //Следить за файлами со стилями с нужным расширением
    gulp.watch('./src/sass/**/*.scss', gulp.series('styles'))
@@ -121,4 +161,4 @@ gulp.task('watch', () => {
 });
 
 //Таск по умолчанию, Запускает del, styles, scripts и watch
-gulp.task('start', gulp.series('del', gulp.parallel('styles', 'scripts','image-compress','pug'), 'watch'));
+gulp.task('start', gulp.series('del', gulp.parallel('styles', 'scripts','image-compress','svg-sprite','pug'), 'watch'));

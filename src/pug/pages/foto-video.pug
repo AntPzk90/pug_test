@@ -1,0 +1,31 @@
+extends .././layouts/layout.pug
+block title
+    title="foto"
+block content
+    main.main__foto-video
+        section.foto-video__bg
+            div.foto-video__bg-wrapeer.container
+                img(src="../imgs/mobile/SEDONA-foto.png", alt="sedona")
+        section.foto-video__slogan
+            div.foto-video__slogan-wrapper.container
+                h1.foto-video__title
+                    | Фото и видео
+                p.foto-video__dscr
+                    | Не можете решиться на путешествие из-за курса?
+                    | Фотографии помогут вам забыть о политике и экономике.
+        section.foto-video__gallary
+            div.foto-video__gallary.container
+                ul.galleery__list
+                    li.galleru__list-item
+                        picture.picture__gallery
+                            source.hd__foto(srcset="../imgs/desktop/photo-1-desktop.jpg", media="(min-width:1200px)")
+                            img.sm__foto(src="../imgs/mobile/photo-1-mobile.jpg", alt="road")
+                    li.galleru__list-item
+                        img.hd__foto(src="../imgs/desktop/photo-1-desktop.jpg", alt="road")
+                        img.sm__foto(src="../imgs/mobile/photo-2-mobile.jpg", alt="road")
+                    li.galleru__list-item
+                        img.hd__foto(src="../imgs/desktop/photo-1-desktop.jpg", alt="road")
+                        img.sm__foto(src="../imgs/mobile/photo-3-mobile.jpg", alt="road")
+                    li.galleru__list-item
+                        img.hd__foto(src="../imgs/desktop/photo-1-desktop.jpg", alt="road")
+                        img.sm__foto(src="../imgs/mobile/photo-4-mobile.jpg", alt="road")
