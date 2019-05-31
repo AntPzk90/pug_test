@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>foto</title>
+    <title>Sedona</title>
+  </head>
+  <body>
+    <header class="main__header">
+      <button class="mobi__menu-btn" type="button"><span class="decor__span"></span></button>
+      <button class="mobi__menu-close" type="button">  </button>
+      <div class="main__header-wrapper container"><a class="header__logo" href="#">
+          <svg class="desktop__logo" width="188" height="90">
+            <use xlink:href="imgs/sprite.svg#logo-sedona"></use>
+          </svg><img class="desktop__logo-mobile" src="imgs/mobile/logotype-mobile.png"/></a>
+        <nav class="main__nav">
+          <ul class="nav__list">
+            <li class="nav__list-item"><a class="nav__list-link" href="index.html">главная</a></li>
+            <li class="nav__list-item"><a class="nav__list-link" href="foto-video.html">фото и видео</a></li>
+            <li class="nav__list-item"><a class="nav__list-link" href="form.html">форма отзыва</a></li>
+            <li class="nav__list-item"><a class="nav__list-link" href="#">html academy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
+<main class="main__form">
+  <section class="foto-video__bg background__block">
+    <div class="background__block__bg-wrapeer container"><img class="background__block__mobile-title" src="../imgs/mobile/SEDONA-foto.png" alt="sedona"/><img class="background__block__tablet-title" src="../imgs/tablet/SEDONA.png" alt="sedona"/></div>
+  </section>
+  <section class="form__slogan slogan__block">
+    <div class="slogan-wrapper container">
+      <h1 class="slogan__title">Оставьте свой отзыв</h1>
+      <p class="slogan__dscr">
+        Помогите нашим отелям стать лучше! оставьте отзыв о них,
+        а также о посещенных вами достопримечательностях
+      </p>
+    </div>
+  </section>
+  <section class="form">
+    <div class="form__wrapper container">
+      <form class="form__sedona" action="#" method="post">
+        <fieldset class="fieldset user__fieldset">
+          <legend>прдставьтесь</legend>
+          <div class="input__wrapper">   
+            <label class="name_label" for="user-name">Имя*</label>
+            <input class="user__input" type="text" name="user-name" id="user-name" placeholder="Пётр" require="require"/>
+          </div>
+          <div class="input__wrapper">   
+            <label class="name_label" for="user-surname">Фамилия*</label>
+            <input class="user__input" type="text" name="user-surname" id="user-surname" placeholder="Иванов" require="require"/>
+          </div>
+          <div class="input__wrapper">   
+            <label class="name_label" for="user-patronymic">Отчество*</label>
+            <input class="user__input" type="text" name="user-patronymic" id="user-patronymic" placeholder="Александрович" require="require"/>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset impression__fieldset">
+          <legend>ваше общее впечатление</legend>
+          <div class="input__wrapper">
+            <input class="radio__input" type="radio" name="impression-input" id="fine" checked="checked"/>
+            <label class="radio__label" for="fine">скорее положительное</label>
+          </div>
+          <div class="input__wrapper">
+            <input class="radio__input" type="radio" name="impression-input" id="bad"/>
+            <label class="radio__label" for="bad">скорее отрицательное</label>
+          </div>
+          <div class="input__wrapper">
+            <input class="radio__input" type="radio" name="impression-input" id="unknown"/>
+            <label class="radio__label" for="unknown">затрудняюсь ответить</label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset contacts__fieldset">
+          <legend>контактная информация</legend>
+          <div class="input__wrapper">
+            <label class="contacts__label" for="tel">Контактный телефон*</label>
+            <input class="contacts__input" type="tel" name="user-tel" id="tel" placeholder="Введите телефон" require="require"/>
+          </div>
+          <div class="input__wrapper">
+            <label class="contacts__label" for="email">Электронная почта*</label>
+            <input class="contacts__input" type="email" name="user-email" id="email" placeholder="Введите email" require="require"/>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset attractions__fieldset">
+          <legend>посещенные<br/>достопримечательности:</legend>
+          <div class="flex__wrapper">   
+            <div class="input__wrapper">
+              <input class="checkbox__input" type="checkbox" name="devil-bridge" id="devil-bridge" checked="checked"/>
+              <label class="checkbox__label" for="devil-bridge">Мост дьявола</label>
+            </div>
+            <div class="input__wrapper">
+              <input class="checkbox__input" type="checkbox" name="grief-bell" id="grief-bell"/>
+              <label class="checkbox__label" for="grief-bell">Гора-колокол</label>
+            </div>
+            <div class="input__wrapper">
+              <input class="checkbox__input" type="checkbox" name="slide-park" id="slide-park"/>
+              <label class="checkbox__label" for="slide-park">Слайд-парк</label>
+            </div>
+            <div class="input__wrapper">
+              <input class="checkbox__input" type="checkbox" name="red-roks" id="red-roks"/>
+              <label class="checkbox__label" for="red-roks">красные скалы</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset emotions__fieldset">
+          <legend>Опишите свои эмоции:</legend>
+          <div class="input__wrapper">
+            <textarea name="emotions-text" cols="30" rows="10" placeholder="Опишите подробно все свои восторги"></textarea>
+          </div>
+        </fieldset>
+        <div class="btn__wrapper">
+          <button class="form__button btn" type="submit">Отправить отзыв</button>
+          <p class="mandatory__txt">* - обязательные поля         </p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<section class="footer container">
+  <p class="hashtag">#VISITSEDONA</p>
+  <ul class="footer__social-list">
+    <li class="footer__social-list-item"><a href="#">
+        <svg width="17" height="15">
+          <use xlink:href="imgs/sprite.svg#twitter"></use>
+        </svg></a></li>
+    <li class="footer__social-list-item"><a href="#">
+        <svg width="12" height="22">
+          <use xlink:href="imgs/sprite.svg#fb-icon"></use>
+        </svg></a></li>
+    <li class="footer__social-list-item"><a href="#">
+        <svg width="20" height="16">
+          <use xlink:href="imgs/sprite.svg#youtube"></use>
+        </svg></a></li>
+  </ul>
+  <p class="academy__logo"><span>разработано</span><a href="#">
+      <svg width="108" height="37">
+        <use xlink:href="imgs/sprite.svg#logo-htmlacademy"></use>
+      </svg></a></p>
+</section>

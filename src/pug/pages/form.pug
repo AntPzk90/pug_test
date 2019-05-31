@@ -1,0 +1,132 @@
+extends .././layouts/layout.pug
+block title
+    title="foto"
+block content
+    main.main__form
+        include .././components/background-sedona.pug
+        section.form__slogan.slogan__block
+            div.slogan-wrapper.container
+                h1.slogan__title
+                    | Оставьте свой отзыв
+                p.slogan__dscr
+                    | Помогите нашим отелям стать лучше! оставьте отзыв о них,
+                    | а также о посещенных вами достопримечательностях
+        section.form
+            div.form__wrapper.container
+                form.form__sedona(action="#", method="post")
+                    fieldset.fieldset.user__fieldset
+                        legend
+                            | прдставьтесь
+                        div.input__wrapper    
+                            label.name_label(for="user-name")
+                                | Имя*
+                            input.user__input(type="text",
+                                name="user-name",
+                                id="user-name",
+                                placeholder="Пётр",
+                                require)
+                        div.input__wrapper    
+                            label.name_label(for="user-surname")
+                                | Фамилия*
+                            input.user__input(type="text",
+                                name="user-surname",
+                                id="user-surname",
+                                placeholder="Иванов",
+                                require)
+                        div.input__wrapper    
+                            label.name_label(for="user-patronymic")
+                                | Отчество*
+                            input.user__input(type="text",
+                                name="user-patronymic",
+                                id="user-patronymic",
+                                placeholder="Александрович",
+                                require)
+                    fieldset.fieldset.impression__fieldset
+                        legend
+                            | ваше общее впечатление
+                        div.input__wrapper
+                            input.radio__input(type="radio",
+                                    name="impression-input",
+                                    id="fine",
+                                    checked)
+                            label.radio__label(for="fine")
+                                | скорее положительное
+                        div.input__wrapper
+                            input.radio__input(type="radio",
+                                    name="impression-input",
+                                    id="bad")
+                            label.radio__label(for="bad")
+                                | скорее отрицательное
+                        div.input__wrapper
+                            input.radio__input(type="radio",
+                                    name="impression-input",
+                                    id="unknown")
+                            label.radio__label(for="unknown")
+                                | затрудняюсь ответить
+                    fieldset.fieldset.contacts__fieldset
+                        legend
+                            | контактная информация
+                        div.input__wrapper
+                            label.contacts__label(for="tel")
+                                | Контактный телефон*
+                            input.contacts__input(type="tel",
+                                                name="user-tel",
+                                                id="tel",
+                                                placeholder="Введите телефон",
+                                                require)
+                        div.input__wrapper
+                            label.contacts__label(for="email")
+                                | Электронная почта*
+                            input.contacts__input(type="email",
+                                                name="user-email",
+                                                id="email",
+                                                placeholder="Введите email",
+                                                require)
+                    fieldset.fieldset.attractions__fieldset
+                        legend
+                            | посещенные
+                            br
+                            | достопримечательности:
+                        div.flex__wrapper    
+                            div.input__wrapper
+                                input.checkbox__input(type="checkbox",
+                                        name="devil-bridge",
+                                        id="devil-bridge",
+                                        checked)
+                                label.checkbox__label(for="devil-bridge")
+                                    | Мост дьявола
+                            div.input__wrapper
+                                input.checkbox__input(type="checkbox",
+                                        name="grief-bell",
+                                        id="grief-bell")
+                                label.checkbox__label(for="grief-bell")
+                                    | Гора-колокол
+                            div.input__wrapper
+                                input.checkbox__input(type="checkbox",
+                                        name="slide-park",
+                                        id="slide-park")
+                                label.checkbox__label(for="slide-park")
+                                    | Слайд-парк
+                            div.input__wrapper
+                                input.checkbox__input(type="checkbox",
+                                        name="red-roks",
+                                        id="red-roks")
+                                label.checkbox__label(for="red-roks")
+                                    | красные скалы
+                    fieldset.fieldset.emotions__fieldset
+                        legend
+                            | Опишите свои эмоции:
+                        div.input__wrapper
+                            textarea(name="emotions-text", 
+                                        cols="30", 
+                                        rows="10",
+                                        placeholder="Опишите подробно все свои восторги")
+                    div.btn__wrapper
+                        button(type="submit").form__button.btn
+                            | Отправить отзыв
+                        p.mandatory__txt
+                            |* - обязательные поля         
+                        
+
+
+

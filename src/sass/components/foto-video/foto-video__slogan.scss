@@ -1,0 +1,38 @@
+.slogan__block{
+    border-bottom: 1px solid $grey;
+    @media screen and (min-width: $tablet){
+        border: none;
+    }
+}
+.slogan-wrapper{
+    min-height: 190px;
+    box-sizing: border-box;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    text-align: center;
+    @media screen and (min-width: $tablet){
+        min-height: 230px;
+        padding-top: 75px;
+    }
+    @media screen and (min-width: $desktop){
+        min-height: 270px;
+        padding-top: 105px;
+    }
+}
+.slogan__title{
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 25px;
+    @media screen and (min-width: $tablet){
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+}
+.slogan__dscr{
+    width: 280px;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet){
+        line-height: 24px;
+        width: 480px;
+    }
+}

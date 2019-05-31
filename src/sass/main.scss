@@ -1,12 +1,22 @@
 @import 'variables.scss';
 @import 'settings.scss';
+// шапка сайта
 @import 'components/header.scss';
-@import 'components/imdex-text-section.scss';
-@import 'components/index-slogan.scss';
-@import 'components/index-advantages_1.scss';
-@import 'components/services.scss';
-@import 'components/more-advantages.scss';
-@import 'components/index-advantages_2.scss';
-@import 'components/interesting.scss';
-@import 'components/map.scss';
-@import 'footer.scss';
+// главная страница
+@import 'components/index/imdex-text-section.scss';
+@import 'components/index/index-slogan.scss';
+@import 'components/index/index-advantages_1.scss';
+@import 'components/index/services.scss';
+@import 'components/index/more-advantages.scss';
+@import 'components/index/index-advantages_2.scss';
+@import 'components/index/interesting.scss';
+@import 'components/index/map.scss';
+//фото и видео страница
+@import "components/foto-video/foto-video__bg.scss";
+@import "components/foto-video/foto-video__slogan.scss";
+@import "components/foto-video/foto-video__gallery.scss";
+@import "components/foto-video/foto-video__qestion.scss";
+// форма отзыва
+@import "components/form/form.scss";
+// подвал сайта
+@import 'components/footer.scss';

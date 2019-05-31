@@ -3,29 +3,89 @@ block title
     title="foto"
 block content
     main.main__foto-video
-        section.foto-video__bg
-            div.foto-video__bg-wrapeer.container
-                img(src="../imgs/mobile/SEDONA-foto.png", alt="sedona")
-        section.foto-video__slogan
-            div.foto-video__slogan-wrapper.container
-                h1.foto-video__title
+        include .././components/background-sedona.pug
+        section.foto-video__slogan.slogan__block
+            div.slogan-wrapper.container
+                h1.slogan__title
                     | Фото и видео
-                p.foto-video__dscr
+                p.slogan__dscr
                     | Не можете решиться на путешествие из-за курса?
                     | Фотографии помогут вам забыть о политике и экономике.
-        section.foto-video__gallary
-            div.foto-video__gallary.container
-                ul.galleery__list
-                    li.galleru__list-item
+        section.foto-video__gallery
+            div.foto-video__gallery-wrapper.container
+                ul.gallery__list
+                    li.gallery__list-item
                         picture.picture__gallery
-                            source.hd__foto(srcset="../imgs/desktop/photo-1-desktop.jpg", media="(min-width:1200px)")
-                            img.sm__foto(src="../imgs/mobile/photo-1-mobile.jpg", alt="road")
-                    li.galleru__list-item
-                        img.hd__foto(src="../imgs/desktop/photo-1-desktop.jpg", alt="road")
-                        img.sm__foto(src="../imgs/mobile/photo-2-mobile.jpg", alt="road")
-                    li.galleru__list-item
-                        img.hd__foto(src="../imgs/desktop/photo-1-desktop.jpg", alt="road")
-                        img.sm__foto(src="../imgs/mobile/photo-3-mobile.jpg", alt="road")
-                    li.galleru__list-item
-                        img.hd__foto(src="../imgs/desktop/photo-1-desktop.jpg", alt="road")
-                        img.sm__foto(src="../imgs/mobile/photo-4-mobile.jpg", alt="road")
+                            source.desk_foto.hd__foto(srcset="../imgs/desktop/photo-1-desktop.jpg", media="(min-width:1200px)")
+                            source.tab__foto(srcset="../imgs/tablet/photo-1-tablet.jpg", media="(min-width:768px)")
+                            source.sm__foto(src="../imgs/mobile/photo-1-mobile.jpg", media="(max-width:768px)")
+                            img.picture__gallery-img(src="../imgs/mobile/photo-1-mobile.jpg", alt="foto")
+                        div.picture__gallery-dscr
+                            p.foto__title
+                                | неродные просторы
+                            p.foto__author
+                                span
+                                    | Автор фото :
+                                span.foto__author-name
+                                    | Борис
+                            p.foto_likes
+                                    | 1350
+                    li.gallery__list-item
+                        picture.picture__gallery
+                            source.desk_foto(srcset="../imgs/desktop/photo-2-desktop.jpg", media="(min-width:1200px)")
+                            source.tab__foto(srcset="../imgs/tablet/photo-2-tablet.jpg", media="(min-width:768px)")
+                            source.sm__foto(src="../imgs/mobile/photo-1-mobile.jpg", media="(max-width:768px)")
+                            img.picture__gallery-img(src="../imgs/mobile/photo-2-mobile.jpg", alt="foto")
+                        div.picture__gallery-dscr
+                            p.foto__title
+                                | неродные просторы
+                            p.foto__author
+                                span
+                                    | Автор фото :
+                                span.foto__author-name
+                                    | борис
+                            p.foto_likes
+                                    | 1350
+                    li.gallery__list-item
+                        picture.picture__gallery
+                            source.desk_foto(srcset="../imgs/desktop/photo-3-desktop.jpg", media="(min-width:1200px)")
+                            source.tab__foto(srcset="../imgs/tablet/photo-3-tablet.jpg", media="(min-width:768px)")
+                            source.sm__foto(src="../imgs/mobile/photo-3-mobile.jpg", media="(max-width:768px)")
+                            img.picture__gallery-img(src="../imgs/mobile/photo-3-mobile.jpg", alt="foto")
+                        div.picture__gallery-dscr
+                            p.foto__title
+                                | неродные просторы
+                            p.foto__author
+                                span
+                                    | Автор фото :
+                                span.foto__author-name
+                                    | борис
+                            p.foto_likes
+                                    | 1350
+                    li.gallery__list-item
+                        picture.picture__gallery
+                            source.desk_foto(srcset="../imgs/desktop/photo-4-desktop.jpg", media="(min-width:1200px)")
+                            source.tab__foto(srcset="../imgs/tablet/photo-4-tablet.jpg", media="(min-width:768px)")
+                            source.sm__foto(src="../imgs/mobile/photo-4-mobile.jpg", media="(max-width:768px)")
+                            img.picture__gallery-img(src="../imgs/mobile/photo-4-mobile.jpg", alt="foto")
+                        div.picture__gallery-dscr
+                            p.foto__title
+                                | неродные просторы
+                            p.foto__author
+                                span
+                                    | Автор фото :
+                                span.foto__author-name
+                                    | борис
+                            p.foto_likes
+                                | 1350
+        section.foto-video__qestion
+            div.foto-video__qestion-wrapper.container
+                p.qestion__mini-title
+                    | Все еще сомневаетесь?
+                p.qestion__txt
+                    | Смотрите видеопрезентацию и скорее за билетами,
+                    | пока они не подорожали в очередной раз!
+        section.foto-vide__video-content
+            div.foto-vide__video-content-wrapper.container
+                video(src="video/HTML for Danil 2.mp4",width="100%",height="100%",poster="imgs/desktop/video-desktop.jpg" controls)
+            
